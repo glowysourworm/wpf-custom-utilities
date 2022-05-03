@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Media;
+
+using WpfCustomUtilities.SyntaxHighlighting;
 
 namespace WpfCustomUtilities.ClassMaker
 {
@@ -10,6 +13,12 @@ namespace WpfCustomUtilities.ClassMaker
         public MainWindow()
         {
             InitializeComponent();
+
+            //foreach (var rule in CSharpRuleSet.GetRules())
+            //{
+            //    this.InputTB.AddToken(rule.SearchPattern, new SolidColorBrush(rule.Color), Brushes.Transparent);
+            //    this.OutputTB.AddToken(rule.SearchPattern, new SolidColorBrush(rule.Color), Brushes.Transparent);
+            //}
         }
 
         private void GoButton_Click(object sender, RoutedEventArgs e)

@@ -98,5 +98,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WpfCustomUtilities\WpfCustomUtilities.csproj">
+      <Project>{49d37a48-e64b-4d55-8680-2294e5814ff4}</Project>
+      <Name>WpfCustomUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -243,6 +243,8 @@
     <Compile Include="SimpleCollections\Grid\GridLocation.cs" />
     <Compile Include="SimpleCollections\Grid\GridRoutine.cs" />
     <Compile Include="SimpleCollections\Grid\Interface\IGridLocator.cs" />
+    <Compile Include="SyntaxHighlighting\CSharpRuleSet.cs" />
+    <Compile Include="SyntaxHighlighting\HighlightRule.cs" />
     <Compile Include="UI\Converter\Boolean\BoolANDMultiConverter.cs" />
     <Compile Include="UI\Converter\Boolean\BoolANDParameterConverter.cs" />
     <Compile Include="UI\Converter\Visibility\BoolANDVisibilityMultiConverter.cs" />
@@ -293,6 +295,8 @@
     <Compile Include="UI\View\RadioButtonEnumControl.xaml.cs">
       <DependentUpon>RadioButtonEnumControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\View\RegexHighlightingTextBox.cs" />
+    <Compile Include="UI\View\RegexHighlightingToken.cs" />
     <Compile Include="UI\View\SelectionFreeListBox.cs" />
     <Compile Include="UI\View\ValueBar.xaml.cs">
       <DependentUpon>ValueBar.xaml</DependentUpon>
