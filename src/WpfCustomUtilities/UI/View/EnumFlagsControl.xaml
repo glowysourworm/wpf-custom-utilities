@@ -4,7 +4,7 @@
              x:Name="EnumFlagsUC">
 
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/RogueCreator.Core;component/Resource/Converter.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WpfCustomUtilities;component/Resource/Converter.xaml" />
     </UserControl.Resources>
     
     <Grid>
