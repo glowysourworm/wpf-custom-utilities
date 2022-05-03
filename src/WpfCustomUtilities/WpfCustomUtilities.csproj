@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{49D37A48-E64B-4D55-8680-2294E5814FF4}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>WpfCustomUtilities</RootNamespace>
+    <AssemblyName>WpfCustomUtilities</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2022.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\Command\ISimpleAsyncCommand.cs" />
+    <Compile Include="Extensions\Command\SimpleAsyncCommand.cs" />
+    <Compile Include="Extensions\Command\SimpleCommand.cs" />
+    <Compile Include="Extensions\EnumExtension.cs" />
+    <Compile Include="Extensions\Event\EventHandler.cs" />
+    <Compile Include="Extensions\FormattedException.cs" />
+    <Compile Include="Extensions\NativeIO\FastDirectory\FastDirectoryEnumerator.cs" />
+    <Compile Include="Extensions\NativeIO\FastDirectory\FastDirectoryEnumeratorExtension.cs" />
+    <Compile Include="Extensions\NativeIO\FileData.cs" />
+    <Compile Include="Extensions\NativeIO\System32FindData.cs" />
+    <Compile Include="Extensions\NumberExtension.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\ObservableCollection\ObservableCollectionExtension.cs" />
+    <Compile Include="Extensions\ObservableCollection\Interface\ISelectableViewModel.cs" />
+    <Compile Include="Extensions\ObservableCollection\MultiObservableCollection.cs" />
+    <Compile Include="Extensions\ObservableCollection\NotifyingObservableCollection.cs" />
+    <Compile Include="Extensions\ObservableCollection\PagedObservableCollection.cs" />
+    <Compile Include="Extensions\ObservableCollection\SelectableObservableCollection.cs" />
+    <Compile Include="Extensions\PointExtension.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
+    <Compile Include="Extensions\ViewModelBase.cs" />
+    <Compile Include="IocFramework\Application\Attribute\Enums.cs" />
+    <Compile Include="IocFramework\Application\Attribute\IocExportAttribute.cs" />
+    <Compile Include="IocFramework\Application\Attribute\IocExportBaseAttribute.cs" />
+    <Compile Include="IocFramework\Application\Attribute\IocExportDefaultAttribute.cs" />
+    <Compile Include="IocFramework\Application\Attribute\IocExportSpecificAttribute.cs" />
+    <Compile Include="IocFramework\Application\Attribute\IocImportAttribute.cs" />
+    <Compile Include="IocFramework\Application\Attribute\IocImportingConstructorAttribute.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\Export.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\ExportCache.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\ExportFactory.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\ExportKey.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\Instance.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\InstanceCache.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\SharedExport.cs" />
+    <Compile Include="IocFramework\Application\InstanceManagement\SharedExportKey.cs" />
+    <Compile Include="IocFramework\Application\IocBootstrapper.cs" />
+    <Compile Include="IocFramework\Application\IocContainer.cs" />
+    <Compile Include="IocFramework\Application\IocException\IocCircularDependencyException.cs" />
+    <Compile Include="IocFramework\Application\IocException\IocDuplicateExportException.cs" />
+    <Compile Include="IocFramework\Application\IocException\IocExportException.cs" />
+    <Compile Include="IocFramework\Application\IocException\IocFailedDependencyException.cs" />
+    <Compile Include="IocFramework\Application\IocException\IocInitializationException.cs" />
+    <Compile Include="IocFramework\Application\IocWindowBootstrapper.cs" />
+    <Compile Include="IocFramework\Application\ModuleBase.cs" />
+    <Compile Include="IocFramework\Application\ModuleDefinition.cs" />
+    <Compile Include="IocFramework\Application\ModuleInstance.cs" />
+    <Compile Include="IocFramework\EventAggregation\IIocEventAggregator.cs" />
+    <Compile Include="IocFramework\EventAggregation\IocAsyncEvent.cs" />
+    <Compile Include="IocFramework\EventAggregation\IocEvent.cs" />
+    <Compile Include="IocFramework\EventAggregation\IocEventAggregator.cs" />
+    <Compile Include="IocFramework\EventAggregation\IocEventBase.cs" />
+    <Compile Include="IocFramework\EventAggregation\IocEventKey.cs" />
+    <Compile Include="IocFramework\EventAggregation\IocRegionEvent.cs" />
+    <Compile Include="IocFramework\RegionManagement\Interface\IIocRegionManager.cs" />
+    <Compile Include="IocFramework\RegionManagement\IocException\IocRegionException.cs" />
+    <Compile Include="IocFramework\RegionManagement\IocRegion.cs" />
+    <Compile Include="IocFramework\RegionManagement\IocRegionManager.cs" />
+    <Compile Include="IocFramework\RegionManagement\RegionCache.cs" />
+    <Compile Include="IocFramework\RegionManagement\RegionView.cs" />
+    <Compile Include="IocFramework\RegionManagement\Wpf\BlurTransition.cs" />
+    <Compile Include="IocFramework\RegionManagement\Wpf\FadeTransition.cs" />
+    <Compile Include="IocFramework\RegionManagement\Wpf\Transition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RecursiveSerializer\Component\DeserializationObjectFactory.cs" />
+    <Compile Include="RecursiveSerializer\Component\DeserializationResolver.cs" />
+    <Compile Include="RecursiveSerializer\Component\ImplementingTypeResolver.cs" />
+    <Compile Include="RecursiveSerializer\Component\Interface\IPropertyDeserializer.cs" />
+    <Compile Include="RecursiveSerializer\Component\Interface\IPropertyReader.cs" />
+    <Compile Include="RecursiveSerializer\Component\Interface\IPropertySerializer.cs" />
+    <Compile Include="RecursiveSerializer\Component\Interface\IPropertyWriter.cs" />
+    <Compile Include="RecursiveSerializer\Component\PropertyDeserializer.cs" />
+    <Compile Include="RecursiveSerializer\Component\PropertyReader.cs" />
+    <Compile Include="RecursiveSerializer\Component\PropertySerializer.cs" />
+    <Compile Include="RecursiveSerializer\Component\PropertyWriter.cs" />
+    <Compile Include="RecursiveSerializer\Component\PropertyWriterFactory.cs" />
+    <Compile Include="RecursiveSerializer\Component\SerializationObjectFactory.cs" />
+    <Compile Include="RecursiveSerializer\Component\SerializationPlanner.cs" />
+    <Compile Include="RecursiveSerializer\Interface\IBaseFormatter.cs" />
+    <Compile Include="RecursiveSerializer\Interface\IRecursiveSerializable.cs" />
+    <Compile Include="RecursiveSerializer\Interface\ISerializationPlan.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\CollectionInterfaceType.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\HashedType.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\HashedTypeData.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\PropertyDefinition.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\PropertySpecification.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\SerializationMode.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\SerializedNodeData.cs" />
+    <Compile Include="RecursiveSerializer\IO\Data\SerializedNodeType.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\BaseFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\BooleanFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\ByteFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\DateTimeFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\DoubleFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\EnumFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\FormatterFactory.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\HashedTypeFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\IntegerFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\PrimitiveArray\ByteArrayFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\PrimitiveArray\IntegerArrayFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\StringFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Formatter\UnsignedIntegerFormatter.cs" />
+    <Compile Include="RecursiveSerializer\IO\Interface\ISerializationStreamReader.cs" />
+    <Compile Include="RecursiveSerializer\IO\Interface\ISerializationStreamWriter.cs" />
+    <Compile Include="RecursiveSerializer\IO\SerializationStream.cs" />
+    <Compile Include="RecursiveSerializer\IO\Streaming\HeaderDeserializer.cs" />
+    <Compile Include="RecursiveSerializer\IO\Streaming\HeaderSerializer.cs" />
+    <Compile Include="RecursiveSerializer\IO\Streaming\NodeDeserializer.cs" />
+    <Compile Include="RecursiveSerializer\IO\Streaming\NodeSerializer.cs" />
+    <Compile Include="RecursiveSerializer\Manifest\SerializationManifest.cs" />
+    <Compile Include="RecursiveSerializer\Manifest\SerializedStreamData.cs" />
+    <Compile Include="RecursiveSerializer\Manifest\SerializedTypeManifest.cs" />
+    <Compile Include="RecursiveSerializer\Planning\DeserializedHeader.cs" />
+    <Compile Include="RecursiveSerializer\Planning\PropertyDefinitionResolved.cs" />
+    <Compile Include="RecursiveSerializer\Planning\PropertyResolvedInfo.cs" />
+    <Compile Include="RecursiveSerializer\Planning\PropertySpecificationResolved.cs" />
+    <Compile Include="RecursiveSerializer\Planning\RecursiveSerializerMemberInfo.cs" />
+    <Compile Include="RecursiveSerializer\Planning\SerializationPlan.cs" />
+    <Compile Include="RecursiveSerializer\Planning\SerializedHeader.cs" />
+    <Compile Include="RecursiveSerializer\RecursiveSerializer.cs" />
+    <Compile Include="RecursiveSerializer\RecursiveSerializerConfiguration.cs" />
+    <Compile Include="RecursiveSerializer\SerializableType.cs" />
+    <Compile Include="RecursiveSerializer\Target\DeserializedCollectionNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\DeserializedLeafNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\DeserializedNodeBase.cs" />
+    <Compile Include="RecursiveSerializer\Target\DeserializedNullLeafNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\DeserializedObjectNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\DeserializedReferenceNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\ResolvedHashedType.cs" />
+    <Compile Include="RecursiveSerializer\Target\SerializedCollectionNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\SerializedLeafNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\SerializedNodeBase.cs" />
+    <Compile Include="RecursiveSerializer\Target\SerializedObjectNode.cs" />
+    <Compile Include="RecursiveSerializer\Target\SerializedReferenceNode.cs" />
+    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerException.cs" />
+    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerHashGenerator.cs" />
+    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerInnerException.cs" />
+    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerShallowCopier.cs" />
+    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerStore.cs" />
+    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerTypeFactory.cs" />
+    <Compile Include="SimpleCollections\Array2D\Array2DExtension.cs" />
+    <Compile Include="SimpleCollections\Array2D\Array2DHandlers.cs" />
+    <Compile Include="SimpleCollections\Array2D\Array2DIndex.cs" />
+    <Compile Include="SimpleCollections\Array2D\Array2DRect.cs" />
+    <Compile Include="SimpleCollections\Array2D\ArrayExtension.cs" />
+    <Compile Include="SimpleCollections\Collection\BinarySearchTree.cs" />
+    <Compile Include="SimpleCollections\Collection\BinarySearchTreeNode.cs" />
+    <Compile Include="SimpleCollections\Collection\Interface\INotifyDictionaryKey.cs" />
+    <Compile Include="SimpleCollections\Collection\NotifyDictionary.cs" />
+    <Compile Include="SimpleCollections\Collection\NotifyDictionaryHandler.cs" />
+    <Compile Include="SimpleCollections\Collection\NotifyItem.cs" />
+    <Compile Include="SimpleCollections\Collection\SimpleDictionary.cs" />
+    <Compile Include="SimpleCollections\Collection\SimpleOrderedList.cs" />
+    <Compile Include="Extensions\Collection\ArrayExtension.cs" />
+    <Compile Include="Extensions\Collection\CollectionExtension.cs" />
+    <Compile Include="Extensions\Collection\EnumerableExtension.cs" />
+    <Compile Include="Extensions\Collection\NonGenericEnumerableExtension.cs" />
+    <Compile Include="SimpleCollections\Extension\SimpleDictionaryExtension.cs" />
+    <Compile Include="SimpleCollections\Graph\Graph.cs" />
+    <Compile Include="SimpleCollections\Graph\GraphEdge.cs" />
+    <Compile Include="SimpleCollections\Graph\GraphEdgeCollection.cs" />
+    <Compile Include="SimpleCollections\Graph\GraphHandlers.cs" />
+    <Compile Include="SimpleCollections\Graph\GraphTraversal.cs" />
+    <Compile Include="SimpleCollections\Graph\Interface\IGraph.cs" />
+    <Compile Include="SimpleCollections\Graph\Interface\IGraphEdge.cs" />
+    <Compile Include="SimpleCollections\Graph\Interface\IGraphNode.cs" />
+    <Compile Include="SimpleCollections\Grid\Grid.cs" />
+    <Compile Include="SimpleCollections\Grid\GridBoundary.cs" />
+    <Compile Include="SimpleCollections\Grid\GridBoundaryExtension.cs" />
+    <Compile Include="SimpleCollections\Grid\GridEnums.cs" />
+    <Compile Include="SimpleCollections\Grid\GridExtension.cs" />
+    <Compile Include="SimpleCollections\Grid\GridHash.cs" />
+    <Compile Include="SimpleCollections\Grid\GridLocation.cs" />
+    <Compile Include="SimpleCollections\Grid\GridRoutine.cs" />
+    <Compile Include="SimpleCollections\Grid\Interface\IGridLocator.cs" />
+    <Compile Include="UI\Converter\Boolean\BoolANDMultiConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\BoolANDParameterConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\BoolANDVisibilityMultiConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\BoolIntConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\BoolInverseConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\BoolInverseVisibilityCollapseConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\BoolInverseVisibilityHiddenConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\BoolORMultiConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\BoolORVisibilityMultiConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\BoolToValidationForegroundConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\BoolVisibilityCollapseConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\BoolVisibilityHiddenConverter.cs" />
+    <Compile Include="UI\Converter\Collection\CollectionEmptyVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\Collection\CollectionNonEmptyVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\DebugVisibilityCollapsedConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\DualBoolVisibilityCollapsedConverter.cs" />
+    <Compile Include="UI\Converter\Enum\EnumDisplayAttributeDescriptionConverter.cs" />
+    <Compile Include="UI\Converter\Enum\EnumDisplayAttributeNameConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\GreaterThanOrEqualParameterConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\GreaterThanZeroConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\GreaterThanZeroVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\GreaterThanZeroVisibilityInverseConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\LessThanZeroConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\NonNullBoolConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\NonNullVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\Boolean\NullBoolConverter.cs" />
+    <Compile Include="UI\Converter\Visibility\NullVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterEqualityBoolConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterEqualityInverseBoolConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterMultiplyConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterTypeEqualityBoolConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterVisibilityCollapsedConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterVisibilityCollapsedInverseConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\ParameterVisibilityVisibleConverter.cs" />
+    <Compile Include="UI\Converter\Enum\RadioButtonEnumConverter.cs" />
+    <Compile Include="UI\Converter\String\StringNullOrEmptyVisibilityConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\SumConverter.cs" />
+    <Compile Include="UI\Converter\Parameter\SumGreaterThanParameterBoolConverter.cs" />
+    <Compile Include="UI\View\EnumComboBox.xaml.cs">
+      <DependentUpon>EnumComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\EnumFlagsControl.xaml.cs">
+      <DependentUpon>EnumFlagsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\RadioButtonEnumControl.xaml.cs">
+      <DependentUpon>RadioButtonEnumControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\SelectionFreeListBox.cs" />
+    <Compile Include="UI\View\ValueBar.xaml.cs">
+      <DependentUpon>ValueBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ConsoleUtility.cs" />
+    <Compile Include="Utility\NamingUtility.cs" />
+    <Compile Include="Utility\TextUtility.cs" />
+    <Compile Include="Utility\ZipEncoder.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resource\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\View\EnumComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\View\EnumFlagsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\View\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\View\RadioButtonEnumControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\View\ValueBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,2 @@
+nuget pack ..\src\WpfCustomUtilities\WpfCustomUtilities.csproj -IncludeReferencedProjects
+nuget push WpfCustomUtilities.1.0.0.1.nupkg -ApiKey oy2otw4zizjb3t5hckkqbjd7lfdszjfermujev2fdnih4m -Source https://localhost

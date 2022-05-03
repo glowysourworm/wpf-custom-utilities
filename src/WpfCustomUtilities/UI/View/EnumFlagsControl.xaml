@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="WpfCustomUtilities.UI.View.EnumFlagsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="EnumFlagsUC">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/RogueCreator.Core;component/Resource/Converter.xaml" />
+    </UserControl.Resources>
+    
+    <Grid>
+        <GroupBox x:Name="EnumGroupBox" Header="{Binding HeaderFontSize, ElementName=EnumFlagsControl}">
+            <ItemsControl x:Name="EnumItemsControl" Margin="10">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <StackPanel Margin="3" Orientation="Horizontal" HorizontalAlignment="Left">
+                                
+                                <CheckBox Checked="CheckBox_Checked" 
+                                          Unchecked="CheckBox_Checked" 
+                                          Margin="3"
+                                          IsChecked="{Binding IsChecked}" 
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center" />                                
+                                
+                                <TextBlock Text="{Binding DisplayName}" Foreground="White" 
+                                           FontSize="{Binding EnumNameFontSize, ElementName=EnumFlagsUC}" Margin="3" 
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            </StackPanel>
+
+                            <TextBlock Text="{Binding Description}" 
+                                       Visibility="{Binding ShowDescriptions, ElementName=EnumFlagsUC, Converter={StaticResource BoolVisibilityCollapseConverter}}"
+                                       Foreground="White" 
+                                       FontSize="{Binding EnumDescriptionFontSize, ElementName=EnumFlagsUC}" 
+                                       Margin="3" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel IsItemsHost="True" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </GroupBox>
+    </Grid>
+</UserControl>

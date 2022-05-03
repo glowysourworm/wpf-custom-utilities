@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WpfCustomUtilities.UI.View.RadioButtonEnumControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ItemsControl x:Name="EnumList" Background="Black">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <RadioButton Margin="0, 0, 0, 5" GroupName="EnumGroup" Foreground="White" Background="Black" 
+                             Content="{Binding DisplayName}" 
+                             ToolTip="{Binding Description}"
+                             Tag="{Binding EnumName}"
+                             IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                             Checked="RadioButton_Checked">
+                </RadioButton>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>
