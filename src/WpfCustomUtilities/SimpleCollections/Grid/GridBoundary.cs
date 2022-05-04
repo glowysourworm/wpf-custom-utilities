@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.SimpleCollections.Array2D;
 using WpfCustomUtilities.SimpleCollections.Grid.Interface;
 

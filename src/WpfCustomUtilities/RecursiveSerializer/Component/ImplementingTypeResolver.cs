@@ -3,8 +3,8 @@
 using System;
 using System.Collections.Generic;
 
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
 namespace WpfCustomUtilities.RecursiveSerializer.Component
 {

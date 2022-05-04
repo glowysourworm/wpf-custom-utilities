@@ -6,8 +6,8 @@ using System.Text;
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.IO.Interface;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
 namespace WpfCustomUtilities.RecursiveSerializer.IO.Streaming
 {
@@ -109,6 +109,9 @@ namespace WpfCustomUtilities.RecursiveSerializer.IO.Streaming
 
         private DeserializedHeader ResolveData(SerializedHeader header)
         {
+            // Resolve Root Type
+            var resolvedRoot = RecursiveSerializerTypeFactory.ResolveAsActual(header.SerializedType);
+
             var resolvedTypes = new Dictionary<int, ResolvedHashedType>();
             var missingTypes = new Dictionary<int, HashedType>();
             var resolvedSpecifications = new Dictionary<PropertySpecificationResolved, List<int>>();
@@ -227,7 +230,8 @@ namespace WpfCustomUtilities.RecursiveSerializer.IO.Streaming
                     missingSpecifications.Add(specification.Key, specification.Value);
             }
 
-            return new DeserializedHeader(header,
+            return new DeserializedHeader(resolvedRoot,
+                                          header,
                                           resolvedTypes,
                                           missingTypes,
                                           resolvedSpecifications,
@@ -239,6 +243,9 @@ namespace WpfCustomUtilities.RecursiveSerializer.IO.Streaming
         {
             var typeTable = new Dictionary<int, HashedType>();
             var specifications = new Dictionary<PropertySpecification, List<int>>();
+
+            // ROOT TYPE
+            var rootType = _reader.Read<HashedType>();
 
             // TYPE TABLE COUNT
             var count = _reader.Read<int>();
@@ -312,7 +319,7 @@ namespace WpfCustomUtilities.RecursiveSerializer.IO.Streaming
                 specifications.Add(specification, objectIds);
             }
 
-            return new SerializedHeader(typeTable, specifications);
+            return new SerializedHeader(rootType, typeTable, specifications);
         }
     }
 }

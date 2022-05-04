@@ -5,8 +5,7 @@ using System.Linq;
 using WpfCustomUtilities.Extensions;
 
 using WpfCustomUtilities.IocFramework.Application.Attribute;
-
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 
 namespace WpfCustomUtilities.IocFramework.Application.InstanceManagement
 {

@@ -1,6 +1,6 @@
 ﻿
 using WpfCustomUtilities.Extensions;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 
 namespace WpfCustomUtilities.SimpleCollections.Array2D
 {

@@ -5,8 +5,8 @@ using System.Linq;
 using WpfCustomUtilities.Extensions;
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
 namespace WpfCustomUtilities.RecursiveSerializer.Component
 {

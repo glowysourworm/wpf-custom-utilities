@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfCustomUtilities.RecursiveSerializer.Utility
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     public class RecursiveSerializerInnerException : Exception
     {

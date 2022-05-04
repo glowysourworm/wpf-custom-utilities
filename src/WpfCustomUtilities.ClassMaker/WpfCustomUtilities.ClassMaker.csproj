@@ -105,4 +105,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>call $(SolutionDir)..\tools\class-maker.bat $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

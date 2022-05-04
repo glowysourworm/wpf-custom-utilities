@@ -146,6 +146,8 @@
     <Compile Include="RecursiveSerializer\Component\PropertyWriterFactory.cs" />
     <Compile Include="RecursiveSerializer\Component\SerializationObjectFactory.cs" />
     <Compile Include="RecursiveSerializer\Component\SerializationPlanner.cs" />
+    <Compile Include="RecursiveSerializer\Shared\Data\PropertyInfo.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializerDataReader.cs" />
     <Compile Include="RecursiveSerializer\Interface\IBaseFormatter.cs" />
     <Compile Include="RecursiveSerializer\Interface\IRecursiveSerializable.cs" />
     <Compile Include="RecursiveSerializer\Interface\ISerializationPlan.cs" />
@@ -187,9 +189,12 @@
     <Compile Include="RecursiveSerializer\Planning\RecursiveSerializerMemberInfo.cs" />
     <Compile Include="RecursiveSerializer\Planning\SerializationPlan.cs" />
     <Compile Include="RecursiveSerializer\Planning\SerializedHeader.cs" />
-    <Compile Include="RecursiveSerializer\RecursiveSerializer.cs" />
-    <Compile Include="RecursiveSerializer\RecursiveSerializerConfiguration.cs" />
-    <Compile Include="RecursiveSerializer\SerializableType.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializer.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializerConfiguration.cs" />
+    <Compile Include="RecursiveSerializer\Shared\SerializableType.cs" />
+    <Compile Include="RecursiveSerializer\Shared\Data\SerializedNode.cs" />
+    <Compile Include="RecursiveSerializer\Shared\Data\TypeInfo.cs" />
+    <Compile Include="RecursiveSerializer\Shared\Data\SerializedTypeSpecification.cs" />
     <Compile Include="RecursiveSerializer\Target\DeserializedCollectionNode.cs" />
     <Compile Include="RecursiveSerializer\Target\DeserializedLeafNode.cs" />
     <Compile Include="RecursiveSerializer\Target\DeserializedNodeBase.cs" />
@@ -202,10 +207,10 @@
     <Compile Include="RecursiveSerializer\Target\SerializedNodeBase.cs" />
     <Compile Include="RecursiveSerializer\Target\SerializedObjectNode.cs" />
     <Compile Include="RecursiveSerializer\Target\SerializedReferenceNode.cs" />
-    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerException.cs" />
-    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerHashGenerator.cs" />
-    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerInnerException.cs" />
-    <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerShallowCopier.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializerException.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializerHashGenerator.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializerInnerException.cs" />
+    <Compile Include="RecursiveSerializer\Shared\RecursiveSerializerShallowCopier.cs" />
     <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerStore.cs" />
     <Compile Include="RecursiveSerializer\Utility\RecursiveSerializerTypeFactory.cs" />
     <Compile Include="SimpleCollections\Array2D\Array2DExtension.cs" />
@@ -295,8 +300,6 @@
     <Compile Include="UI\View\RadioButtonEnumControl.xaml.cs">
       <DependentUpon>RadioButtonEnumControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\View\RegexHighlightingTextBox.cs" />
-    <Compile Include="UI\View\RegexHighlightingToken.cs" />
     <Compile Include="UI\View\SelectionFreeListBox.cs" />
     <Compile Include="UI\View\ValueBar.xaml.cs">
       <DependentUpon>ValueBar.xaml</DependentUpon>

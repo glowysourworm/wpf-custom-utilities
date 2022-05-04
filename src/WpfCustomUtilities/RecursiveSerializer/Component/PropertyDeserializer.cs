@@ -5,8 +5,8 @@ using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.IO.Interface;
 using WpfCustomUtilities.RecursiveSerializer.IO.Streaming;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
 namespace WpfCustomUtilities.RecursiveSerializer.Component
 {

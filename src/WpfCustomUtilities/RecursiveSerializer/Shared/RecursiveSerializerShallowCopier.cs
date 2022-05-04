@@ -5,7 +5,7 @@ using System;
 using WpfCustomUtilities.RecursiveSerializer.Component;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
 
-namespace WpfCustomUtilities.RecursiveSerializer.Utility
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     /// <summary>
     /// Class that takes a shallow copy of a target type. Utilizes Recursive Serializer data facilities to

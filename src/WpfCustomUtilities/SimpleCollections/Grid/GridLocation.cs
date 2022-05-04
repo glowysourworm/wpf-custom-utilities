@@ -1,7 +1,7 @@
 ﻿using System;
 
 using WpfCustomUtilities.RecursiveSerializer.Component.Interface;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.SimpleCollections.Collection;
 using WpfCustomUtilities.SimpleCollections.Collection.Interface;
 using WpfCustomUtilities.SimpleCollections.Graph.Interface;

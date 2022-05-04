@@ -7,7 +7,7 @@ using WpfCustomUtilities.RecursiveSerializer.Component;
 using WpfCustomUtilities.RecursiveSerializer.IO;
 using WpfCustomUtilities.RecursiveSerializer.Manifest;
 
-namespace WpfCustomUtilities.RecursiveSerializer
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     /// <summary>
     /// Serializer that performs depth-first serialization / deserialization
@@ -26,7 +26,7 @@ namespace WpfCustomUtilities.RecursiveSerializer
         public RecursiveSerializer(Type objectType, RecursiveSerializerConfiguration configuration)
         {
             // Double check that assembly is loaded and that object will have proper serialization data support
-            if (!WpfCustomUtilities.RecursiveSerializer.Utility.RecursiveSerializerTypeFactory.IsAssemblyLoaded(objectType))
+            if (!WpfCustomUtilities.RecursiveSerializer.Shared.RecursiveSerializerTypeFactory.IsAssemblyLoaded(objectType))
                 throw new FormattedException("Assembly not loaded for RecursiveSerializer for type {0}", objectType);
 
             _serializer = new PropertySerializer(configuration);

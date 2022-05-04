@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCustomUtilities", "WpfCu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCustomUtilities.ClassMaker", "WpfCustomUtilities.ClassMaker\WpfCustomUtilities.ClassMaker.csproj", "{34619329-7441-40F7-A6EF-6F732DA79A8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCustomUtilities.UnitTest", "WpfCustomUtilities.UnitTest\WpfCustomUtilities.UnitTest.csproj", "{DC03F454-EFC1-4EF4-84D9-6AE335729E07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCustomUtilities.UnitTest", "WpfCustomUtilities.UnitTest\WpfCustomUtilities.UnitTest.csproj", "{DC03F454-EFC1-4EF4-84D9-6AE335729E07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCustomUtilities.MoreEnumerable", "WpfCustomUtilities.MoreEnumerable\WpfCustomUtilities.MoreEnumerable.csproj", "{C4F17115-8EAF-4662-A284-D359600719E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCustomUtilities.RecursiveSerializer.Compare", "WpfCustomUtilities.RecursiveSerializer.Compare\WpfCustomUtilities.RecursiveSerializer.Compare.csproj", "{04AD8030-089B-4508-AA78-7AA66A2B3D61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C4F17115-8EAF-4662-A284-D359600719E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F17115-8EAF-4662-A284-D359600719E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F17115-8EAF-4662-A284-D359600719E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AD8030-089B-4508-AA78-7AA66A2B3D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AD8030-089B-4508-AA78-7AA66A2B3D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AD8030-089B-4508-AA78-7AA66A2B3D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AD8030-089B-4508-AA78-7AA66A2B3D61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

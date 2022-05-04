@@ -1,4 +1,4 @@
-﻿namespace WpfCustomUtilities.RecursiveSerializer
+﻿namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     public class RecursiveSerializerConfiguration
     {

@@ -7,6 +7,11 @@ namespace WpfCustomUtilities.RecursiveSerializer.Planning
     internal class SerializedHeader
     {
         /// <summary>
+        /// Type of obejct serialized
+        /// </summary>
+        internal HashedType SerializedType { get; private set; }
+
+        /// <summary>
         /// Set of all types to be serialized to file
         /// </summary>
         internal Dictionary<int, HashedType> TypeTable { get; private set; }
@@ -21,9 +26,11 @@ namespace WpfCustomUtilities.RecursiveSerializer.Planning
         /// </summary>
         internal Dictionary<PropertySpecification, List<int>> PropertySpecificationGroups { get; private set; }
 
-        internal SerializedHeader(Dictionary<int, HashedType> typeTable,
+        internal SerializedHeader(HashedType serializedType,
+                                  Dictionary<int, HashedType> typeTable,
                                   Dictionary<PropertySpecification, List<int>> propertySpecificationGroups)
         {
+            this.SerializedType = serializedType;
             this.TypeTable = typeTable;
             this.PropertySpecificationLookup = new Dictionary<int, PropertySpecification>();
             this.PropertySpecificationGroups = propertySpecificationGroups;

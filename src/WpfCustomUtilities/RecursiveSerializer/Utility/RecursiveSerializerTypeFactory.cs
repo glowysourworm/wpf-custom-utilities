@@ -7,7 +7,7 @@ using WpfCustomUtilities.Extensions;
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.Target;
 
-namespace WpfCustomUtilities.RecursiveSerializer.Utility
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     /// <summary>
     /// Reflecting static component for the RecursiveSerializer. This stores caches of reflected data types

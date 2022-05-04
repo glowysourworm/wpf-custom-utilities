@@ -17,6 +17,9 @@ namespace WpfCustomUtilities.RecursiveSerializer.IO.Streaming
 
         internal void Serialize(SerializedHeader header)
         {
+            // ROOT TYPE
+            _writer.Write(header.SerializedType);
+
             // TYPE TABLE COUNT
             _writer.Write<int>(header.TypeTable.Count);
 

@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
-using System.Windows.Media;
-
-using WpfCustomUtilities.SyntaxHighlighting;
 
 namespace WpfCustomUtilities.ClassMaker
 {

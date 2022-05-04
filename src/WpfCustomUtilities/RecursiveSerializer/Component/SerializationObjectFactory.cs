@@ -8,8 +8,8 @@ using System.Runtime.Serialization;
 
 using WpfCustomUtilities.Extensions;
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
 namespace WpfCustomUtilities.RecursiveSerializer.Component
 {

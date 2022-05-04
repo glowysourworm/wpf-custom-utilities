@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace WpfCustomUtilities.RecursiveSerializer.Utility
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     /// <summary>
     /// Creates unique hash codes using the SHA-256 algorithm

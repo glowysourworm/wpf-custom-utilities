@@ -7,6 +7,8 @@ namespace WpfCustomUtilities.RecursiveSerializer.Planning
 {
     internal class DeserializedHeader
     {
+        internal ResolvedHashedType SerializedType { get; private set; }
+
         /// <summary>
         /// Directly deserialized data from the header
         /// </summary>
@@ -37,13 +39,15 @@ namespace WpfCustomUtilities.RecursiveSerializer.Planning
         /// </summary>
         internal Dictionary<int, PropertySpecification> MissingSpecificationLookup { get; private set; }
 
-        internal DeserializedHeader(SerializedHeader headerData,
+        internal DeserializedHeader(ResolvedHashedType serializedType,
+                                    SerializedHeader headerData,
                                     Dictionary<int, ResolvedHashedType> resolvedTypeTable,
                                     Dictionary<int, HashedType> missingTypeTable,
                                     Dictionary<PropertySpecificationResolved, List<int>> resolvedPropertySpecifications,
                                     Dictionary<PropertySpecification, List<int>> modifiedPropertySpecifications,
                                     Dictionary<PropertySpecification, List<int>> missingPropertySpecifications)
         {
+            this.SerializedType = serializedType;
             this.Data = headerData;
             this.ResolvedTypeTable = resolvedTypeTable;
             this.MissingTypeTable = missingTypeTable;

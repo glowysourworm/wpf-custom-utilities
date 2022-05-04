@@ -3,7 +3,7 @@
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.Target;
 
-namespace WpfCustomUtilities.RecursiveSerializer.Utility
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     public class RecursiveSerializerException : Exception
     {

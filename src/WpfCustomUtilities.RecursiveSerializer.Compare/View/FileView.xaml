@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WpfCustomUtilities.RecursiveSerializer.Compare.View.FileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:view="clr-namespace:WpfCustomUtilities.RecursiveSerializer.Compare.View"
+             xmlns:viewModel="clr-namespace:WpfCustomUtilities.RecursiveSerializer.Compare.ViewModel">
+    <Border BorderBrush="LightGray" BorderThickness="1">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="300" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Type -->
+            <view:TypeTextBlock DataContext="{Binding RootType}" />
+
+            <!-- Header -->
+            <ListBox x:Name="TypeLB" 
+                     BorderThickness="0.0"
+                     ItemsSource="{Binding Types}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type viewModel:TypeViewModel}">
+                        <view:TypeTextBlock />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!-- Data Tree -->
+            <ListBox x:Name="DataTree" 
+                     BorderThickness="0.0"
+                     ItemsSource="{Binding DataNodes}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type viewModel:TypeViewModel}">
+                        <view:DataNodeTextBlock />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+    </Border>
+</UserControl>

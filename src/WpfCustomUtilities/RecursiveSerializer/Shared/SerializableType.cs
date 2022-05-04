@@ -4,9 +4,8 @@ using WpfCustomUtilities.RecursiveSerializer.Component.Interface;
 using WpfCustomUtilities.RecursiveSerializer.Interface;
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
-namespace WpfCustomUtilities.RecursiveSerializer
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     /// <summary>
     /// Class to wrap a System.Type object and provide a reference-like wrapper that is serializable

@@ -2,7 +2,7 @@
 using System.Linq;
 
 using WpfCustomUtilities.IocFramework.Application.IocException;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.SimpleCollections.Collection;
 
 namespace WpfCustomUtilities.IocFramework.Application.InstanceManagement

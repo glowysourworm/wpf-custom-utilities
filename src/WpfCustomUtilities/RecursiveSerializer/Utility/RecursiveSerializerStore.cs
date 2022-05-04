@@ -9,7 +9,7 @@ using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
 using WpfCustomUtilities.RecursiveSerializer.Target;
 
-namespace WpfCustomUtilities.RecursiveSerializer.Utility
+namespace WpfCustomUtilities.RecursiveSerializer.Shared
 {
     /// <summary>
     /// Static store for reflected type info

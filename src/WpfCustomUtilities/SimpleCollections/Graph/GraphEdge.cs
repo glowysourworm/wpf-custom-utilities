@@ -1,6 +1,6 @@
 ﻿using System;
 
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.SimpleCollections.Graph.Interface;
 
 namespace WpfCustomUtilities.SimpleCollections.Graph

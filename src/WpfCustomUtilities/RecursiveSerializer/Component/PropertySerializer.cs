@@ -7,8 +7,8 @@ using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.IO.Interface;
 using WpfCustomUtilities.RecursiveSerializer.IO.Streaming;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
 
 namespace WpfCustomUtilities.RecursiveSerializer.Component
 {
@@ -90,7 +90,11 @@ namespace WpfCustomUtilities.RecursiveSerializer.Component
 
                                           }, pair => pair.Value.Select(node => node.Id).ToList());
 
-            var header = new SerializedHeader(distinctTypes, specificationGroups);
+            // Get type data for the root - set to the header
+            var rootType = RecursiveSerializerTypeFactory.Build(typeof(T));
+
+            // Set data in the header
+            var header = new SerializedHeader(rootType, distinctTypes, specificationGroups);
 
             // Serialize the header
             headerSerializer.Serialize(header);

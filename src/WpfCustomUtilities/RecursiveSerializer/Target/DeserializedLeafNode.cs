@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using WpfCustomUtilities.RecursiveSerializer.IO.Data;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
-using WpfCustomUtilities.RecursiveSerializer.Utility;
+using WpfCustomUtilities.RecursiveSerializer.Shared;
 
 namespace WpfCustomUtilities.RecursiveSerializer.Target
 {
