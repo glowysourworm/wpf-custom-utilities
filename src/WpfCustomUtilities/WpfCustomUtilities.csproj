@@ -119,6 +119,9 @@
     <Compile Include="IocFramework\RegionManagement\Wpf\BlurTransition.cs" />
     <Compile Include="IocFramework\RegionManagement\Wpf\FadeTransition.cs" />
     <Compile Include="IocFramework\RegionManagement\Wpf\Transition.cs" />
+    <Compile Include="IocFramework\WindowManagement\Interface\IIocDialogView.cs" />
+    <Compile Include="IocFramework\WindowManagement\Interface\IIocWindowManager.cs" />
+    <Compile Include="IocFramework\WindowManagement\IocWindowManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
