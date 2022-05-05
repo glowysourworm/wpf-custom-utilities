@@ -38,6 +38,43 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
             return Get(grid, column, row);
         }
 
+        /// <summary>
+        /// Checks for grid adjacency using an AND mask with the provided compass constrained direction.
+        /// </summary>
+        public static bool IsAdjacencyDefined<T>(this Grid<T> grid, int column, int row, CompassConstrained directionMask)
+        {
+            var result = true;
+
+            if (directionMask == CompassConstrained.Null)
+                throw new Exception("Invalid compass constrained direction:  GridExtension.IsDefinedMasked");
+
+            if (directionMask.HasFlag(CompassConstrained.N))
+                result &= grid.IsDefined(column, row - 1);
+
+            if (directionMask.HasFlag(CompassConstrained.S))
+                result &= grid.IsDefined(column, row + 1);
+
+            if (directionMask.HasFlag(CompassConstrained.E))
+                result &= grid.IsDefined(column + 1, row);
+
+            if (directionMask.HasFlag(CompassConstrained.W))
+                result &= grid.IsDefined(column - 1, row);
+
+            if (directionMask.HasFlag(CompassConstrained.NE))
+                result &= grid.IsDefined(column + 1, row - 1);
+
+            if (directionMask.HasFlag(CompassConstrained.NW))
+                result &= grid.IsDefined(column - 1, row - 1);
+
+            if (directionMask.HasFlag(CompassConstrained.SE))
+                result &= grid.IsDefined(column + 1, row + 1);
+
+            if (directionMask.HasFlag(CompassConstrained.SW))
+                result &= grid.IsDefined(column - 1, row + 1);
+
+            return result;
+        }
+
         public static T GetAdjacentElement<T>(this Grid<T> grid, int column, int row, Compass direction)
         {
             switch (direction)
@@ -327,7 +364,6 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
             return true;
         }
 
-
         public static void Populate<T>(this Grid<T> grid, GridResult<T> itemCallback)
         {
             if (grid.IsReadOnly())
@@ -376,7 +412,7 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
         }
 
         /// <summary>
-        /// Returns true if any adjacent elements are positive with respect to the provided predicate OR are 
+        /// Returns true if any adjacent elements are negative with respect to the provided predicate OR are 
         /// out of bounds OR are null.
         /// </summary>
         public static bool IsEdgeElement<T>(this Grid<T> grid, int column, int row, GridPredicate<T> predicate)
