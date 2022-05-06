@@ -41,36 +41,33 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
         /// <summary>
         /// Checks for grid adjacency using an AND mask with the provided compass constrained direction.
         /// </summary>
-        public static bool IsAdjacencyDefined<T>(this Grid<T> grid, int column, int row, CompassConstrained directionMask)
+        public static CompassConstrained GetAdjacency<T>(this Grid<T> grid, int column, int row)
         {
-            var result = true;
+            CompassConstrained result = CompassConstrained.Null;
 
-            if (directionMask == CompassConstrained.Null)
-                throw new Exception("Invalid compass constrained direction:  GridExtension.IsDefinedMasked");
+            if (grid.IsDefined(column, row - 1))
+                result |= CompassConstrained.N;
 
-            if (directionMask.HasFlag(CompassConstrained.N))
-                result &= grid.IsDefined(column, row - 1);
+            if (grid.IsDefined(column, row + 1))
+                result |= CompassConstrained.S;
 
-            if (directionMask.HasFlag(CompassConstrained.S))
-                result &= grid.IsDefined(column, row + 1);
+            if (grid.IsDefined(column + 1, row))
+                result |= CompassConstrained.E;
 
-            if (directionMask.HasFlag(CompassConstrained.E))
-                result &= grid.IsDefined(column + 1, row);
+            if (grid.IsDefined(column - 1, row))
+                result |= CompassConstrained.W;
 
-            if (directionMask.HasFlag(CompassConstrained.W))
-                result &= grid.IsDefined(column - 1, row);
+            if (grid.IsDefined(column + 1, row - 1))
+                result |= CompassConstrained.NE;
 
-            if (directionMask.HasFlag(CompassConstrained.NE))
-                result &= grid.IsDefined(column + 1, row - 1);
+            if (grid.IsDefined(column - 1, row - 1))
+                result |= CompassConstrained.NW;
 
-            if (directionMask.HasFlag(CompassConstrained.NW))
-                result &= grid.IsDefined(column - 1, row - 1);
+            if (grid.IsDefined(column + 1, row + 1))
+                result |= CompassConstrained.SE;
 
-            if (directionMask.HasFlag(CompassConstrained.SE))
-                result &= grid.IsDefined(column + 1, row + 1);
-
-            if (directionMask.HasFlag(CompassConstrained.SW))
-                result &= grid.IsDefined(column - 1, row + 1);
+            if (grid.IsDefined(column - 1, row + 1))
+                result |= CompassConstrained.SW;
 
             return result;
         }
