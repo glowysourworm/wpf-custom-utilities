@@ -34,6 +34,11 @@ namespace WpfCustomUtilities.SimpleCollections.Collection
             }
         }
 
+        ~NotifyDictionary()
+        {
+            Clear();
+        }
+
         public void GetProperties(IPropertyWriter writer)
         {
             writer.Write("Keys", _keyDict);

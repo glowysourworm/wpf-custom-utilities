@@ -212,6 +212,10 @@ namespace WpfCustomUtilities.SimpleCollections.Graph
 
             Initialize(nodes, edges);
         }
+        ~GraphEdgeCollection()
+        {
+            Clear();
+        }
         public void GetProperties(IPropertyWriter writer)
         {
             writer.Write("Nodes", _nodes.Values.ToList());

@@ -1,6 +1,7 @@
 ﻿using RecursiveSerializer.Formatter;
 
 using System;
+using System.Reflection;
 
 using WpfCustomUtilities.RecursiveSerializer.Component;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
@@ -86,7 +87,8 @@ namespace WpfCustomUtilities.RecursiveSerializer.Shared
         /// <param name="throwReferences">If true, then the copier will throw an exception if it encounters a reference type</param>
         /// <param name="skipDifferences">True, then the copier will skip differences in type</param>
         /// <param name="throwDifferences">If true, then the copier will throw an exception if it encounters a difference in type</param>
-        public TDest MapToNew<TSource, TDest>(TSource source, bool skipDifferences, bool throwDifferences, bool skipReferences, bool throwReferences)
+        /// <param name="predicate">Predicate to specify whether or not to proceed with mapping a source property</param>
+        public TDest MapToNew<TSource, TDest>(TSource source, bool skipDifferences, bool throwDifferences, bool skipReferences, bool throwReferences, Func<PropertyInfo, bool> predicate)
         {
             if (source == null)
                 throw new ArgumentNullException("Trying to map a null reference:  RecusriveSerializerShallowCopier");
@@ -103,7 +105,7 @@ namespace WpfCustomUtilities.RecursiveSerializer.Shared
             var destination = Construct<TDest>(destInfo);
 
             // Utilize Map method
-            Map(source, destination, skipDifferences, throwDifferences, skipReferences, throwReferences);
+            Map(source, destination, skipDifferences, throwDifferences, skipReferences, throwReferences, predicate);
 
             return destination;
         }
@@ -120,7 +122,14 @@ namespace WpfCustomUtilities.RecursiveSerializer.Shared
         /// <param name="throwReferences">If true, then the copier will throw an exception if it encounters a reference type</param>
         /// <param name="skipDifferences">True, then the copier will skip differences in type</param>
         /// <param name="throwDifferences">If true, then the copier will throw an exception if it encounters a difference in type</param>
-        public void Map<TSource, TDest>(TSource source, TDest destination, bool skipDifferences, bool throwDifferences, bool skipReferences, bool throwReferences)
+        /// <param name="predicate">Specifies whether or not to proceed with mapping the specified source property</param>
+        public void Map<TSource, TDest>(TSource source, 
+                                        TDest destination, 
+                                        bool skipDifferences, 
+                                        bool throwDifferences, 
+                                        bool skipReferences, 
+                                        bool throwReferences,
+                                        Func<PropertyInfo, bool> predicate)
         {
             if (source == null || destination == null)
                 throw new ArgumentNullException("Trying to map a null reference:  RecusriveSerializerShallowCopier.Map");
@@ -136,6 +145,10 @@ namespace WpfCustomUtilities.RecursiveSerializer.Shared
             // Iterate property definitions and map values
             foreach (var sourceDefinition in sourceSpec.ResolvedDefinitions)
             {
+                // PREDICATE
+                if (!predicate(sourceDefinition.GetReflectedInfo()))
+                    continue;
+
                 // MISSING DEFINITION
                 if (!destSpec.ContainsResolvedDefinition(sourceDefinition.PropertyName, sourceDefinition.PropertyType))
                 {

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 
 using WpfCustomUtilities.RecursiveSerializer.Component.Interface;
 using WpfCustomUtilities.RecursiveSerializer.Interface;
@@ -55,7 +56,7 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
                     column >= _width ||
                     row < 0 ||
                     row >= _height)
-                    return default(T);
+                    throw new Exception("Trying to index outside the RELATIVE boundary:  Grid.this[]");
 
                 return this.Array2D[column, row];
             }
@@ -118,8 +119,21 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
                 parentRow >= _parentHeight)
                 return false;
 
-            // Using indexer to provide the rest of the offset math
-            return this[parentColumn, parentRow] != null;
+            var column = parentColumn - _offsetColumn;
+            var row = parentRow - _offsetRow;
+
+            if (column < 0 ||
+                column >= _width ||
+                row < 0 ||
+                row >= _height)
+                return false;
+
+            // NOTE:  Indexer took 6.33% of the total cpu time for generating maps!
+            //
+            //        So, the optimization here is just to do the index math.
+            //
+
+            return this.Array2D[column, row] != null;
         }
 
         /// <summary>

@@ -23,8 +23,11 @@ namespace WpfCustomUtilities.RecursiveSerializer.Shared
                 // IEnumerable
                 if (propertiesToHash[index] is IEnumerable)
                 {
+                    // 1.87% foreach (IEnumerable) cast
+                    var enumerable = (IEnumerable)propertiesToHash[index];
+
                     // Extend for each item in the collection
-                    foreach (var propertyItem in (IEnumerable)propertiesToHash[index])
+                    foreach (var propertyItem in enumerable)
                     {
                         if (propertyItem != null)
                         {
