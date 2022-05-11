@@ -1,6 +1,6 @@
-﻿using RecursiveSerializer.Formatter;
+﻿using System.IO;
 
-using System.IO;
+using RecursiveSerializer.Formatter;
 
 namespace WpfCustomUtilities.RecursiveSerializer.IO.Formatter.PrimitiveArray
 {

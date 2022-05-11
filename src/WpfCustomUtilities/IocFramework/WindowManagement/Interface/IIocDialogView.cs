@@ -1,6 +1,4 @@
-﻿
-using WpfCustomUtilities.Extensions.Command;
-using WpfCustomUtilities.Extensions.Event;
+﻿using WpfCustomUtilities.Extensions.Event;
 
 namespace WpfCustomUtilities.IocFramework.WindowManagement.Interface
 {

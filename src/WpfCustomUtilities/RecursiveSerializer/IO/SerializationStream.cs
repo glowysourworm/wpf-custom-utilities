@@ -1,8 +1,8 @@
-﻿using RecursiveSerializer.Formatter;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+
+using RecursiveSerializer.Formatter;
 
 using WpfCustomUtilities.RecursiveSerializer.Interface;
 using WpfCustomUtilities.RecursiveSerializer.IO.Interface;

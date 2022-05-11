@@ -1,7 +1,7 @@
-﻿using RecursiveSerializer.Formatter;
-
-using System;
+﻿using System;
 using System.IO;
+
+using RecursiveSerializer.Formatter;
 
 namespace WpfCustomUtilities.RecursiveSerializer.IO.Formatter.PrimitiveArray
 {

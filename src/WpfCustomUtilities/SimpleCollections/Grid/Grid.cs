@@ -1,7 +1,6 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
 
 using WpfCustomUtilities.RecursiveSerializer.Component.Interface;
 using WpfCustomUtilities.RecursiveSerializer.Interface;

@@ -8,10 +8,6 @@
 
 #region Using Directives
 
-using JetBrains.Annotations;
-
-using Microsoft.Win32.SafeHandles;
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +16,10 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
+
+using JetBrains.Annotations;
+
+using Microsoft.Win32.SafeHandles;
 
 #endregion
 

@@ -1,7 +1,7 @@
-﻿using RecursiveSerializer.Formatter;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using RecursiveSerializer.Formatter;
 
 using WpfCustomUtilities.RecursiveSerializer.Shared;
 using WpfCustomUtilities.RecursiveSerializer.Target;

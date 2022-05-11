@@ -183,6 +183,28 @@ namespace WpfCustomUtilities.SimpleCollections.Grid
             return biggerBoundary.Overlaps(boundary);
         }
 
+        public bool TouchesEdge(int column, int row)
+        {
+            if (column == this.Left)
+            {
+                return row >= this.Top && row <= this.Bottom;
+            }
+            else if (column == this.Right)
+            {
+                return row >= this.Top && row <= this.Bottom;
+            }
+            else if (row == this.Top)
+            {
+                return column >= this.Left && column <= this.Right;
+            }
+            else if (row == this.Bottom)
+            {
+                return column >= this.Left && column <= this.Right;
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// Expands GridBoundary to include the specified region boundary INCLUSIVELY (boundaries
         /// at least match)

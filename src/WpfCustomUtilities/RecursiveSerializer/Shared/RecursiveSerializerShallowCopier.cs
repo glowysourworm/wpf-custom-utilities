@@ -1,7 +1,7 @@
-﻿using RecursiveSerializer.Formatter;
-
-using System;
+﻿using System;
 using System.Reflection;
+
+using RecursiveSerializer.Formatter;
 
 using WpfCustomUtilities.RecursiveSerializer.Component;
 using WpfCustomUtilities.RecursiveSerializer.Planning;
@@ -123,11 +123,11 @@ namespace WpfCustomUtilities.RecursiveSerializer.Shared
         /// <param name="skipDifferences">True, then the copier will skip differences in type</param>
         /// <param name="throwDifferences">If true, then the copier will throw an exception if it encounters a difference in type</param>
         /// <param name="predicate">Specifies whether or not to proceed with mapping the specified source property</param>
-        public void Map<TSource, TDest>(TSource source, 
-                                        TDest destination, 
-                                        bool skipDifferences, 
-                                        bool throwDifferences, 
-                                        bool skipReferences, 
+        public void Map<TSource, TDest>(TSource source,
+                                        TDest destination,
+                                        bool skipDifferences,
+                                        bool throwDifferences,
+                                        bool skipReferences,
                                         bool throwReferences,
                                         Func<PropertyInfo, bool> predicate)
         {
